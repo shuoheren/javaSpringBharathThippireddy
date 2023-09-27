@@ -15,7 +15,7 @@ class ProjectRepoTest {
     @Test
     void testCreateProject() {
         Project project =new Project();
-        project.setProjectName("John's first shot");
+        project.setProjectName("John's second shot");
         repo.save(project);
     }
 
