@@ -15,9 +15,20 @@ class ProjectRepoTest {
     @Test
     void testCreateProject() {
         Project project =new Project();
-        project.setProjectName("John's second shot");
+        project.setProjectName("John's thrid shot");
         repo.save(project);
     }
+    @Test
+	void testFindProjectById(){
+		Project project=repo.findById(4l).get();
+		System.out.println(project);
+	}
 
+    @Test
+    void testDeleteProject(){
+		Project project =repo.findById(4l).get();
+        System.out.println(project);
+		repo.delete(project);
+	}
 
 }

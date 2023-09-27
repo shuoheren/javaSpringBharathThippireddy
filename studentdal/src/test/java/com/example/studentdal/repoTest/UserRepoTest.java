@@ -1,4 +1,5 @@
 package com.example.studentdal.repoTest;
+import com.example.studentdal.entities.Resource;
 import com.example.studentdal.entities.User;
 import com.example.studentdal.repos.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -13,14 +14,26 @@ class UserRepoTest {
 
 
     @Test
-    void testCreateProject() {
+    void testCreateUser() {
         User user=new User();
-        user.setUserName("JohnS");
-        user.setEmail("abcde@gmail.com");
+        user.setUserName("SH");
+        user.setEmail("abcde@outlook.com");
         user.setPassword("1234");
         repo.save(user);
     }
 
+    @Test
+    void testFindUserById(){
+        User user=repo.findById("SH").get();
+        System.out.println(user);
+    }
+
+    @Test
+    void testDeleteUser(){
+        User user =repo.findById("SH").get();
+        System.out.println(user);
+        repo.delete(user);
+    }
 
 }
 

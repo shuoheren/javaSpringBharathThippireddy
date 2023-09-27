@@ -1,4 +1,5 @@
 package com.example.studentdal.repoTest;
+import com.example.studentdal.entities.Project;
 import com.example.studentdal.entities.Resource;
 import com.example.studentdal.repos.ResourceRepository;
 import org.junit.jupiter.api.Test;
@@ -13,10 +14,23 @@ class ResourceRepoTest {
 
 
     @Test
-    void testCreateProject() {
+    void testCreateResource() {
         Resource resource=new Resource();
-        resource.setResourceName("John's first shot");
+        resource.setResourceName("John's resource1907");
         repo.save(resource);
+    }
+
+    @Test
+    void testFindResourceById(){
+        Resource resource=repo.findById(2l).get();
+        System.out.println(resource);
+    }
+
+    @Test
+    void testDeleteResource(){
+        Resource resource =repo.findById(2l).get();
+        System.out.println(resource);
+        repo.delete(resource);
     }
 
 

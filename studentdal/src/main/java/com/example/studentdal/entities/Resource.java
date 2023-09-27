@@ -5,6 +5,14 @@ import javax.persistence.*;
 @Table(name="resources")
 public class Resource {
 
+    @Override
+    public String toString() {
+        return "Resource{" +
+                "resourceId=" + resourceId +
+                ", resourceName='" + resourceName + '\'' +
+                '}';
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "resource_id")

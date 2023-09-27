@@ -11,6 +11,17 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", email='" + email + '\'' +
+                ", createDate=" + createDate +
+                '}';
+    }
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
 
